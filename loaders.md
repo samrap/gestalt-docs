@@ -25,7 +25,7 @@ Once loaded into the object, calling `$config->get('app.debug')` will yield the 
 
 ---
 
-**Tip** Callback Loaders are great for simple configuration loading but can become difficult to maintain with more complex logic. If you find your callback is becoming too long, consider Class Loaders, explained below. 
+**Tip:** Callback Loaders are great for simple configuration loading but can become difficult to maintain with more complex logic. If you find your callback is becoming too long, consider Class Loaders, explained below. 
 
 ---
 
