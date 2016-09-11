@@ -71,3 +71,9 @@ The `reset` method returns an instance of itself, allowing you to chain addition
 ```php
 $config->reset()->add('log', true);
 ```
+
+---
+
+**Tip:** Be careful when using the `set` and `add` methods. It is easy to lose track of the state of your configuration if these are abused, especially in conjunction with the `reset` method.
+
+---
