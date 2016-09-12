@@ -6,7 +6,7 @@ Gestalt's Observers provide a simple way to listen for changes on a Configuratio
 
 Observers implement the `Gestalt\Util\ObserverInterface` interface and define a single `update` method. This method takes an instance of the Configuration and is called every time it is updated, giving you full access to the Configuration in real time. Let's define and implement a potential use case of using Observers in Gestalt.
 
-It is likely that your configuration settings are stored in some sort of stateful manner. Whether it is a group of JSON files, YAML files, or even stored in the database, there may be a time when you wish to persist the changes made in your application to your stateful configuration. Gestalt has no working knowledge of where your configuration values come from, but it does help you quite a bit by using Observers. Let's take a look at defining a basic observer:
+It is likely that your configuration settings are stored in some sort of stateful manner. Whether it is a group of JSON files, YAML files, or even stored in the database, there may be a time when you wish to persist the changes made in your application to your stateful configuration. Gestalt has no working knowledge of where your configuration values come from, but it does help you quite a bit by using Observers. Let's take a look at defining a basic Observer:
 
 ```php
 use Gestalt\Util\Observable;
