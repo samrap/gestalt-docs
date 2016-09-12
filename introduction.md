@@ -12,19 +12,25 @@ $config = new Configuration(['debug' => true]);
 
 A Configuration can be thought of as a collection of your configuration values. It is instantiated via an array of key-value pairs that contain your framework or application's configuration values.
 
-Retreiving those values is natural and concise:
+---
+
+**Did you know?** Gestalt's constructor also accepts a `Configuration` instance or an instance of PHP's `Traversable` interface.
+
+---
+
+Retreiving Configuration values is natural and concise:
 
 ```php
 $debug = $config->get('debug');
 ```
 
-Alternatively, you may access the configuration values as an array:
+Alternatively, you may access the values as an array:
 
 ```php
 $debug = $config['debug'];
 ```
 
-Of course, you may use dot notation to retrieve values from a nested Configuration:
+Using the `get` method you may also use dot notation to retrieve values from a nested Configuration:
 
 ```php
 
@@ -56,8 +62,7 @@ $config->set('debug', false);
 To retrieve the entire array of configuration values, use the `all` method:
 
 ```php
-// Get the whole enchilada.
-$enchilada = $config->all();
+$environment = $config->all();
 ```
 
 At some point you may wish to reset the Configuration back to the original values it was created with. This can be done at any time by using the `reset` method:
@@ -74,6 +79,6 @@ $config->reset()->add('log', true);
 
 ---
 
-**Tip:** Be careful when using the `set` and `add` methods. It is easy to lose track of the state of your configuration if these are abused, especially in conjunction with the `reset` method.
+**Tip:** Be careful when using the `set` and `add` methods. It is easy to lose track of the state of your Configuration if these are abused, especially in conjunction with the `reset` method.
 
 ---
