@@ -59,12 +59,6 @@ The `add` method will add new values, but do nothing if the item already exists.
 $config->set('debug', false);
 ```
 
-To retrieve the entire array of configuration values, use the `all` method:
-
-```php
-$environment = $config->all();
-```
-
 At some point you may wish to reset the Configuration back to the original values it was created with. This can be done at any time by using the `reset` method:
 
 ```php
@@ -82,3 +76,9 @@ $config->reset()->add('log', true);
 **Tip:** Be careful when using the `set` and `add` methods. It is easy to lose track of the state of your Configuration if these are abused, especially in conjunction with the `reset` method.
 
 ---
+
+To retrieve the entire array of configuration values, use the `all` method:
+
+```php
+$environment = $config->all();
+```
