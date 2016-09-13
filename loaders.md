@@ -1,6 +1,6 @@
 # Loaders
 
-So far in the examples, we have been creating our Configuration by passing in an array to its constructor. While array-based configuration values work great once loaded into a Configuration object, it is likely you have a more robust way of storing these values. Gestalt provides a seamless way of translating your configuration values to create a Configuration object.
+So far in the examples, we have been creating our Configuration by passing in an array to its constructor. While array-based configuration values work great once loaded into a Configuration object, it is likely you have a more robust way of storing these values. Gestalt's Loaders provide a seamless way of translating your configuration values to create a Configuration object.
 
 ### Callback Loaders
 
