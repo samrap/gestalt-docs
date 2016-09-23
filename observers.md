@@ -9,6 +9,8 @@ Observers implement the `Gestalt\Util\ObserverInterface` interface and define a 
 It is likely that your configuration settings are stored in some sort of stateful manner. Whether it is a group of JSON files, YAML files, or even stored in the database, there may be a time when you wish to persist the changes made in your application to your stateful configuration. Gestalt has no working knowledge of where your configuration values come from, but you can define that logic by using Observers. Let's take a look at defining a basic Observer:
 
 ```php
+namespace App\Configuration;
+
 use Gestalt\Util\ObserverInterface;
 
 class ConfigurationObserver implements ObserverInterface
