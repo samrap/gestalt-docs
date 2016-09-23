@@ -33,7 +33,7 @@ Once loaded into the object, calling `$config->get('app.debug')` will yield the 
 
 Class Loaders come in handy when you need to define more complex functionality for loading your configuration values. Maybe you want to iterate over a directory to pull multiple files, or perhaps retrieve the values from an API endpoint. Class Loaders allow you to encapsulate this logic and even swap out implementations without altering the rest of your code.
 
-Class Loaders must implement the `Gestalt\Loaders\LoaderInterface` interface and it's single `load` method. Identical to Callback Loaders, a Class Loader's `load` method must return an array of configuration values. This array will be used to create a new instance of the Configuration object. Let's look at defining a Class Loader:
+Class Loaders must implement the `Gestalt\Loaders\LoaderInterface` interface and its single `load` method. Identical to Callback Loaders, a Class Loader's `load` method must return an array of configuration values. This array will be used to create a new instance of the Configuration object. Let's look at defining a Class Loader:
 
 ```php
 
