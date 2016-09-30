@@ -2,6 +2,8 @@
 
 All of Gestalt's functionality revolves around a single object: `Gestalt\Configuration`. The Configuration object is intended to represent your framework's configuration values as a "collection", similar to Laravel or other collection objects.
 
+### Basic Usage
+
 Let's take a look at a Configuration object in its simplest form:
 
 ```php
@@ -82,3 +84,39 @@ To retrieve the entire array of configuration values, use the `all` method:
 ```php
 $environment = $config->all();
 ```
+
+### Configuration Prefixes
+
+Occasionally, you may wish to modify multiple values in a nested area of your Configuration. Traditionally, that would look something like this:
+
+```php
+$configuration->set('database.drivers.mysql.username', 'bonnie');
+$configuration->set('database.drivers.mysql.password', 'martini');
+```
+
+Although this works just fine, typing the same "prefix" over and over can become repetitive. It would be nice if we could type the prefix once and make multiple changes within it. Configuration Prefixes let you do just that. Let's look at an example:
+
+```php
+$configuration->prefix('database.drivers.mysql', function ($partial) {
+    // Modifies the 'database.drivers.mysql.username' value.
+    $partial->set('username', 'bonnie');
+
+    // Modifies the 'database.drivers.mysql.password' value.
+    $partial->set('password', 'martini');
+});
+```
+
+The Configuration's `prefix` method takes two arguments. The first argument is the value in which to prefix Configuration calls. The second argument is a callback function which accepts the prefixed Configuration object. Because it is a Configuration instance, all of the standard methods are available. 
+
+After using the `prefix` method above, we can access `database.drivers.mysql.username` and see "bonnie" as the value:
+
+```php
+echo $configuration->get('database.drivers.mysql.username');
+// "bonnie"
+```
+
+---
+
+**Note:** When using a Configuration Prefix, any attached Observers will be notified regardless of the methods called within the function. This is due to the implementation of prefixes and may be changed down the line.
+
+---
