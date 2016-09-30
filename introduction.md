@@ -117,6 +117,6 @@ echo $configuration->get('database.drivers.mysql.username');
 
 ---
 
-**Note:** When using a Configuration Prefix, any attached Observers will be notified regardless of the methods called within the function. This is due to the implementation of prefixes and may be changed down the line.
+**Note:** When using a Configuration Prefix, any attached Observers will be notified only once and regardless of the methods called within the function. This is due to the implementation of prefixes and may be changed down the line.
 
 ---
