@@ -26,6 +26,12 @@ Retreiving Configuration values is natural and concise:
 $debug = $config->get('debug');
 ```
 
+Retreive a value, passing a default value to return if the item does not exist:
+
+```php
+$debug = $config->get('debug', false);
+```
+
 Alternatively, you may access the values as an array:
 
 ```php
